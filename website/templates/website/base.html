@@ -5,14 +5,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="{% static 'website/base.css' %}">
-        <title>SkinStore - CS:GO</title>
+        <title>{% block title %} SkinStore - CS:GO {% endblock %}</title>
     </head>
     <body>
         <nav class="page-intro">
             <ul>
-                <li class="store-name">SkinStore</li>
+                <li class="store-name"><a href="#">SkinStore</a></li>
                 <li class="store-description">The best CS:GO skin store in the world</li>
-                <li class="my-account-button">My account</li>
+                <li class="my-account-button"><a href="#">My account</a></li>
             </ul>
         </nav>
 
