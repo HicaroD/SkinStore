@@ -2,6 +2,12 @@
     margin: 0;
 }
 
+body {
+    background-image: url('../images/karambit_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .page-intro ul {
     list-style: none; 
     display: flex;
