@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "csgo-font";    
+    src: url("../fonts/cs_regular.ttf") format("truetype");
+}
+
 * {
     margin: 0;
 }
@@ -8,23 +13,38 @@ body {
     background-size: cover;
 }
 
-.page-intro ul {
-    list-style: none; 
-    display: flex;
-    justify-content: space-around;
+.intro {
+    font-family: "csgo-font";
+    text-align: center; 
+    color: white;
+    padding-bottom: 1em;
+    font-size: 2em;
+    background-color: #232429;
 }
 
-.guns-categories {
+.intro h1 {
+    padding: 20px; 
+}
+
+.categories-container {
     display: table;
     margin: 0 auto;
 }
 
-.guns-categories li {
-    list-style: none; 
-    display: inline;
+.categories-container ul {
+    padding-left: 0;
 }
 
-.guns-categories li a {
+.categories-container li {
+    display: inline;
+    margin-left: 10px;
+}
+
+.categories-container li:hover {
+    border-bottom: 2px solid white;
+}
+
+.categories-container li a {
     text-decoration: none;
     color: #b5ff79;
 }
