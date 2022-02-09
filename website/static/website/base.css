@@ -13,3 +13,13 @@ body {
     display: flex;
     justify-content: space-around;
 }
+
+.guns-categories {
+    display: table;
+    margin: 0 auto;
+}
+
+.guns-categories li {
+    list-style: none; 
+    display: inline;
+}
