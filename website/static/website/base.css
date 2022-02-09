@@ -26,6 +26,11 @@ body {
     padding: 20px; 
 }
 
+.intro a {
+    text-decoration: none;
+    color: white;
+}
+
 .categories-container {
     display: table;
     margin: 0 auto;
