@@ -23,3 +23,8 @@ body {
     list-style: none; 
     display: inline;
 }
+
+.guns-categories li a {
+    text-decoration: none;
+    color: #b5ff79;
+}
