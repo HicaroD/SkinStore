@@ -3,7 +3,7 @@
 
 {% block content %}
 {% for knife in knifes %}
-<div class="card bg-dark p-15 d-inline-block" style="width: 13rem">
+<div class="card bg-dark d-inline-flex" style="width: 13rem">
   <img id="product-image" src="{% static 'skins/knifes/butterfly_gamma_doppler.png' %}" class="card-img-top">
   <div class="card-body">
     <h5 class="card-title text-white">{{ knife.name }}</h5>
