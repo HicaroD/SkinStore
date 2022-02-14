@@ -3,11 +3,12 @@
 
 {% block content %}
 {% for knife in knifes %}
-<div class="card bg-dark d-inline-flex" style="width: 13rem">
-  <img id="product-image" src="{% static 'skins/knifes/butterfly_gamma_doppler.png' %}" class="card-img-top">
+<div class="card bg-dark d-inline-block" style="width: 13rem;">
+    <img id="product-image" src="{% static '' %}{{ knife.primary_image_url }}" class="card-img-top">
   <div class="card-body">
     <h5 class="card-title text-white">{{ knife.name }}</h5>
     <h6 class="card-text text-white">{{ knife.quality }}</h6>
+    <p class="card-text text-white">Price: R$ <em>{{ knife.price }}</em></p>
     <a href="#" class="btn btn-primary">Buy Now</a>
   </div>
 </div>
