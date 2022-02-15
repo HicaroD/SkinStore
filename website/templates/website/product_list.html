@@ -3,8 +3,8 @@
 
 {% block content %}
 {% for weapon in weapons %}
-<div class="card bg-dark d-inline-block" style="width: 13rem;">
-    <img id="product-image" src="{% static '' %}{{ weapon.primary_image_url }}" class="card-img-top">
+<div class="card bg-dark d-inline-flex" style="width: 13rem;">
+  <img id="product-image" src="{% static '' %}{{ weapon.primary_image_url }}" class="card-img-top">
   <div class="card-body">
     <h5 class="card-title text-white">{{ weapon.name }}</h5>
     <h6 class="card-text text-white">{{ weapon.quality }}</h6>
