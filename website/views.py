@@ -2,7 +2,8 @@ from django.shortcuts import render
 from .models import Product
 
 def homepage(request):
-    return render(request, 'website/base.html')
+    guns = Product.objects.order_by("-price")
+    return render(request, 'website/product_list.html', {"weapons": guns})
 
 def knifes(request):
     knifes = Product.objects.filter(category="Knife")
