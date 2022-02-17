@@ -1,0 +1,30 @@
+body {
+    background-image: url('../images/karambit_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login {
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    width: 25%;
+    margin: 0 auto;
+    border-radius: 10px;
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+}
+
+#password {
+    padding-top: 20px;
+}
+
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid blue;
+}
+
+input[type=submit] {
+    margin-top: 20px;
+}
