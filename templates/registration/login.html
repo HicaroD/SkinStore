@@ -2,15 +2,21 @@
 {% load static %}
 
 {% block content %}
-<div class="login">
-	<div class="login-header">
-		<h3 id="title">Login</h3>
-	</div>
-	<div class="login-form">
-		<h5 id="username">Username</h5>
-		<input type="text" name="Username" id="name-field">
-		<h5 id="password">Password</h5>
-		<input type="text" name="Password" id="password-field">
-	</div>
+<div class="card w-25 mx-auto rounded text-center align-middle">
+    <div class="card-header">
+        <h4 class="card-title">Login</h4>
+    </div>
+    <div class="card-body">
+        <h5 class="username">Username</h5>
+        <input type="text" id="name-field">
+
+        <h5 id="password">Password</h5>
+        <input type="text" id="password-field">
+
+        <input class="btn btn-primary pt-20" type="submit" value="Log in">
+    </div>
+    <div class="card-footer">
+        <p>Don't have an account? <a href="#">Sign up!</a></p>
+    </div>
 </div>
 {% endblock %}
