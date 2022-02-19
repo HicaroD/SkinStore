@@ -1,1 +1,26 @@
 {% extends 'website/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="card w-25 mx-auto rounded text-center align-middle">
+    <div class="card-header">
+        <h4 class="card-title">Sign Up</h4>
+    </div>
+    <div class="card-body">
+        <h5 class="username">Username</h5>
+        <input type="text" id="name-input">
+        
+        <h5 id="email">E-mail</h5>
+        <input type="text" id="email-input">
+
+        <h5 id="password">Password</h5>
+        <input type="text" id="password-input">
+
+        <input class="btn btn-primary pt-20" type="submit" value="Log in">
+    </div>
+    <div class="card-footer">
+        <p>Already have an account? <a href="#">Sign in!</a></p>
+    </div>
+</div>
+{% endblock %}
+
