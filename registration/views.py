@@ -39,8 +39,7 @@ def register_user(request):
     else:
         register_form = RegisterForm()
 
-    context = {'register_form': register_form, 'registration_error': False}
-    return render(request, 'registration/register.html', context)
+    return render(request, 'registration/register.html', {'register_form': register_form})
 
 def logout_user(request):
     logout(request)
