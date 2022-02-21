@@ -3,9 +3,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from .forms import LoginForm, RegisterForm
 
-def is_user_registered(username):
-    return User.objects.filter(username=username).exists()
-
 def login_user(request):
     login_form = LoginForm()
 
