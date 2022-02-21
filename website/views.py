@@ -1,26 +1,51 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 from .models import Product
 
-def homepage(request):
-    guns = Product.objects.order_by("-price")
-    return render(request, 'website/product_list.html', {"weapons": guns})
+class HomepageView(TemplateView):
+    template_name = 'website/product_list.html'
 
-def knifes(request):
-    knifes = Product.objects.filter(category="Knife")
-    return render(request, 'website/product_list.html', {"weapons": knifes})
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['weapons'] = Product.objects.order_by("-price")
+        return context
 
-def pistols(request):
-    pistols = Product.objects.filter(category="Pistol")
-    return render(request, 'website/product_list.html', {"weapons": pistols})
+class KnifesView(TemplateView):
+    template_name = 'website/product_list.html'
 
-def awps(request):
-    awps = Product.objects.filter(category="AWP")
-    return render(request, 'website/product_list.html', {"weapons": awps})
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['weapons'] = Product.objects.filter(category="Knife")
+        return context
 
-def riflers(request):
-    riflers = Product.objects.filter(category="Rifler")
-    return render(request, 'website/product_list.html', {"weapons": riflers})
+class PistolsView(TemplateView):
+    template_name = 'website/product_list.html'
 
-def gloves(request):
-    gloves = Product.objects.filter(category="Glove")
-    return render(request, 'website/product_list.html', {"weapons": gloves})
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['weapons'] = Product.objects.filter(category="Pistols")
+        return context
+
+class AWPsView(TemplateView):
+    template_name = 'website/product_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['weapons'] = Product.objects.filter(category="AWP")
+        return context
+
+class RiflersView(TemplateView):
+    template_name = 'website/product_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['weapons'] = Product.objects.filter(category="Rifler")
+        return context
+
+class GlovesView(TemplateView):
+    template_name = 'website/product_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['weapons'] = Product.objects.filter(category="Glove")
+        return context
