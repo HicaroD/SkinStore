@@ -1,23 +1,23 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-from .models import Product
+from .models import Skin, Category
 
 class MainTemplateView(ListView):
     template_name = 'website/product_list.html'
     context_object_name = 'weapons'
-    queryset = Product.objects.all()
+    queryset = Skin.objects.all()
 
 class KnifesView(MainTemplateView):
-    queryset = Product.objects.filter(category="Knife")
+    queryset = Skin.objects.filter(category__name__contains="Knife")
 
 class PistolsView(MainTemplateView):
-    queryset = Product.objects.filter(category="Pistols")
+    queryset = Skin.objects.filter(category__name__contains="Pistol")
 
 class AWPsView(MainTemplateView):
-    queryset = Product.objects.filter(category="AWP")
+    queryset = Skin.objects.filter(category__name__contains="AWP")
 
 class RiflersView(MainTemplateView):
-    queryset = Product.objects.filter(category="Rifler")
+    queryset = Skin.objects.filter(category__name__contains="Rifler")
 
 class GlovesView(MainTemplateView):
-    queryset = Product.objects.filter(category="Glove")
+    queryset = Skin.objects.filter(category__name__contains="Glove")
