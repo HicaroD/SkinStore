@@ -2,15 +2,21 @@
 {% load static %}
 
 {% block content %}
-{% for weapon in weapons %}
-<div class="card bg-dark d-inline-flex" style="width: 13rem;">
-  <img id="product-image" src="{% static '' %}{{ weapon.primary_image_url }}" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title text-white">{{ weapon.name }}</h5>
-    <h6 class="card-text text-white">{{ weapon.quality }}</h6>
-    <p class="card-text text-white"><em>R$ {{ weapon.price }}</em></p>
-    <a href="#" class="btn btn-primary">Buy Now</a>
-  </div>
+<div class="container-fluid">
+    <div class="row flex-row flex-wrap">
+        {% for weapon in weapons %}
+        <div class="col-sm-2">
+            <div class="card card-block bg-dark">
+                <img id="product-image" src="{{ weapon.primary_image_url  }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title text-white">{{ weapon.name }}</h5>
+                    <h6 class="card-text text-white">{{ weapon.skin_property }}</h6>
+                    <p class="card-text text-white"><em>R$ {{ weapon.price }}</em></p>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-{% endfor %}
 {% endblock %} 
