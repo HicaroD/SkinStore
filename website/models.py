@@ -3,40 +3,42 @@ from django.db import models
 
 class Property(models.Model):
     class Properties(models.TextChoices):
-        FACTORY_NEW    =  "FN", _("Factory New"),
-        MINIMAL_WEAR   =  "MW", _("Minimal Wear"),
-        FIELD_TESTED   =  "FT", _("Field Tested"),
-        WELL_WORM      =  "WW", _("Well Worm"),
-        BATTLE_SCARRED =  "BS", _("Battle Scarred"),
+        FACTORY_NEW    =  "Factory New", _("Factory New"),
+        MINIMAL_WEAR   =  "Minimal Wear", _("Minimal Wear"),
+        FIELD_TESTED   =  "Field Tested", _("Field Tested"),
+        WELL_WORM      =  "Well Worm", _("Well Worm"),
+        BATTLE_SCARRED =  "Battle Scarred", _("Battle Scarred"),
 
     name = models.CharField(
         max_length=25,
         choices=Properties.choices,
         default=Properties.FACTORY_NEW,
+        unique=True
     )
 
     def __str__(self):
-        return __str__
+        return self.name
 
     class Meta:
         db_table = "property"
 
 class Category(models.Model):
     class Categories(models.TextChoices):
-        GLOVE  = "G", _('Glove'),
-        PISTOL = "P", _('Pistol'),
-        AWP    = "AW", _('AWP'),
-        RIFLER = "R", _('Rifler'),
-        KNIFE  = "K", _('Knife')
+        GLOVE  = "Glove", _('Glove'),
+        PISTOL = "Pistol", _('Pistol'),
+        AWP    = "AWP", _('AWP'),
+        RIFLER = "Rifler", _('Rifler'),
+        KNIFE  = "Knife", _('Knife')
 
     name = models.CharField(
         max_length=25,
         choices=Categories.choices,
         default=Categories.KNIFE,
+        unique=True
     )
 
     def __str__(self):
-        return __str__
+        return self.name
 
     class Meta:
         db_table = "category"
