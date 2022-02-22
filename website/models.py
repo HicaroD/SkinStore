@@ -49,8 +49,8 @@ class Skin(models.Model):
     name = models.CharField(max_length=40, null=True)
     skin_property = models.ForeignKey(Property, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=19, decimal_places=4)
-    primary_image_url = models.CharField(null=True, max_length=50)	
-    secondary_image_url = models.CharField(null=True, max_length=50)
+    primary_image_url = models.URLField(null=True, max_length=200)	
+    secondary_image_url = models.URLField(null=True, max_length=200)
 
     def __str__(self):
 	    return self.name
