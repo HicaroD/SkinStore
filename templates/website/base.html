@@ -65,9 +65,20 @@
 				  </ul>
 				  {% endif %}
 				</li>
+
 			  </ul>
 			</div>
 		  </div>
+
+          {% if user.is_authenticated %}
+          <div class="nav">
+            <li class="nav-item ml-0" id="cart">
+              <a class="nav-link text-white" id="cart-link" href="{% url 'cart' %}">
+                  <span class="fa fa-shopping-cart" style="display: block;font-size: 30px;"></span>
+              </a>
+            </li>
+          </div>
+          {% endif %}
 		</nav>
 
 		<main>
