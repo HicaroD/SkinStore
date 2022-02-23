@@ -2,19 +2,21 @@
 {% load static %}
 
 {% block content %}
-<div class="form-group bg-white p-50 w-50 mx-auto rounded text-center">
-    <div class="card-header">
-        <h4 class="card-title">Sign Up</h4>
-    </div>
+<div class="register">
+    <div class="form-group bg-white p-50 w-50 mx-auto rounded text-center">
+        <div class="card-header">
+            <h4 class="card-title">Sign Up</h4>
+        </div>
 
-    <form method="POST" action="{% url 'register' %}">
-        {% csrf_token %}
-        {{ register_form }}
-        <input class="btn btn-primary w-25 mx-auto" type="submit" value="Sign Up">
-    </form>
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            {{ register_form }}
+            <input class="btn btn-primary w-25 mx-auto" type="submit" value="Sign Up">
+        </form>
 
-    <div class="card-footer">
-        <p>Already have an account? <a href="{% url 'login' %}">Sign in!</a></p>
+        <div class="card-footer">
+            <p>Already have an account? <a href="{% url 'login' %}">Sign in!</a></p>
+        </div>
     </div>
 </div>
 {% endblock %}

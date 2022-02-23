@@ -2,23 +2,25 @@
 {% load static %}
 
 {% block content %}
-<div class="form-group bg-white p-50 w-25 mx-auto rounded text-center align-middle">
-    <div class="card-header">
-        <h4 class="card-title">Sign In</h4>
-    </div>
+<div class="login">
+    <div class="form-group bg-white p-50 w-25 mx-auto rounded text-center align-middle">
+        <div class="card-header">
+            <h4 class="card-title">Sign In</h4>
+        </div>
 
-    {% if login_error %}
-    <p style="color: red;">Username or password incorrect!</p>
-    {% endif %}
+        {% if login_error %}
+        <p style="color: red;">Username or password incorrect!</p>
+        {% endif %}
 
-    <form method="POST" action="{% url 'login' %}" class="form-group">
-        {% csrf_token %}
-        {{ login_form }}
-        <input class="btn btn-primary w-25 mx-auto" type="submit" value="Log in">
-    </form>
+        <form method="POST" action="{% url 'login' %}" class="form-group">
+            {% csrf_token %}
+            {{ login_form }}
+            <input class="btn btn-primary w-25 mx-auto" type="submit" value="Log in">
+        </form>
 
-    <div class="card-footer">
-        <p>Don't have an account? <a href="{% url 'register' %}">Sign up!</a></p>
+        <div class="card-footer">
+            <p>Don't have an account? <a href="{% url 'register' %}">Sign up!</a></p>
+        </div>
     </div>
 </div>
 {% endblock %}
