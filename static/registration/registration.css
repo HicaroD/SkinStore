@@ -1,8 +1,8 @@
-form > * {
-    display: flex;
-    justify-content: center;
+.register {
+    margin-top: 5%;
 }
 
-form > input {
-    margin: 0 auto;
+.login {
+    margin-top: 10%;
+    height: 50%;
 }
