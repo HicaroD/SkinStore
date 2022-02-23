@@ -16,7 +16,7 @@
 		<title>{% block title %} SkinStore - CS:GO {% endblock %}</title>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<nav class="navbar navbar-expand-lg navbar-light bg-dark mb-2">
 		  <div class="container-fluid">
 			<a class="navbar-brand text-white" href="/">SkinStore</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,9 +81,7 @@
           {% endif %}
 		</nav>
 
-		<main>
-			{% block content %}
-			{% endblock %}
-		</main>
+		{% block content %}
+		{% endblock %}
 	</body>
 </html>
