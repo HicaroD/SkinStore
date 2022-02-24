@@ -8,4 +8,9 @@ class CartItem(models.Model):
         on_delete=models.CASCADE,
         primary_key=True
     )
-    quantity = PositiveIntegerField()
+    quantity = models.PositiveIntegerField()
+
+class Cart(models.Model):
+    items = models.ForeignKey(CartItem, on_delete=models.CASCADE)
+    total_amount = models.DecimalField(max_digits=19, decimal_places=4)
+
