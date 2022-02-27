@@ -10,7 +10,13 @@ class CartItem(models.Model):
     )
     quantity = models.PositiveIntegerField()
 
+    def __str__(self):
+        return self.product.name
+
 class Cart(models.Model):
     items = models.ForeignKey(CartItem, on_delete=models.CASCADE)
     total_amount = models.DecimalField(max_digits=19, decimal_places=4)
+
+    def __str__(self):
+        return self.items.product.name
 
